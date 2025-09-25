@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="num1"
+        android:id="@+id/mainFragment"
+        android:orderInCategory="1"
+        android:visible="true"
+        android:icon="@drawable/bottom_nav_home_24"
+        />
+    <item
+        android:title="num2"
+        android:id="@+id/bottomFragment"
+        android:orderInCategory="2"
+        android:visible="true"
+        android:icon="@drawable/bottom_nav_message_24"
+        />
+    <item
+        android:title="num3"
+        android:id="@+id/testFragment"
+        android:orderInCategory="3"
+        android:icon="@drawable/bottom_nav_document_24"
+        />
+    <item
+        android:title="num4"
+        android:id="@+id/num4"
+        android:orderInCategory="4"
+        android:icon="@drawable/bottom_nav_alarm_24"
+        />
+    <item
+        android:title="num5"
+        android:id="@+id/num5"
+        android:orderInCategory="5"
+        android:icon="@drawable/bottom_nav_face_24"
+        />
+</menu>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context="BlankFragment">
+
+    <!-- SRC_IN -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="SRC_IN"
+        android:background="@drawable/test_bg"
+        android:backgroundTint="@color/red"
+        android:backgroundTintMode="src_in"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- MULTIPLY -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="MULTIPLY"
+        android:background="@drawable/test_bg"
+        android:backgroundTint="@color/green"
+        android:backgroundTintMode="multiply"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- SCREEN -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="SCREEN"
+        android:background="@drawable/test_bg"
+        android:backgroundTint="@color/blue"
+        android:backgroundTintMode="screen"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- ADD -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="ADD"
+        android:background="@drawable/test_bg"
+        android:backgroundTint="@color/purple"
+        android:backgroundTintMode="add"
+        android:layout_marginBottom="12dp"/>
+</LinearLayout>

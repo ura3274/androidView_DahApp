@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_buttons">
+        <item>Примiщення</item>
+        <item>Правлiння</item>
+        <item>Сусiди</item>
+        <item>Довiдкова</item>
+        <item>Внески</item>
+        <item>Лiчильники</item>
+        <item>Моi платежи</item>
+        <item>Фiнанси</item>
+        <item>Документи</item>
+        <item>Заявки</item>
+        <item>Загальнi збори</item>
+    </string-array>
+</resources>
