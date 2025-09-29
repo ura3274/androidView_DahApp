@@ -24,7 +24,8 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 icons = R.drawable.main_btn_primishenia_24,
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
-                )
+                ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[1],
@@ -32,6 +33,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[2],
@@ -39,6 +41,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = R.id.toNeighboursFragmentAction
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[3],
@@ -46,6 +49,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[4],
@@ -53,6 +57,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[5],
@@ -60,6 +65,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[6],
@@ -67,6 +73,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[7],
@@ -74,6 +81,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = R.id.toFinanceFragmentAction
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[8],
@@ -81,6 +89,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[9],
@@ -88,6 +97,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, Color.YELLOW), this.displayHeight /800
                 ),
+                destination = null
             ),
             ButtonInfo(
                 text = ctx.resources.getStringArray(R.array.main_buttons)[10],
@@ -95,6 +105,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
                 background = setDrawable(
                     intArrayOf(Color.BLACK, ContextCompat.getColor(ctx, R.color.my_color)), this.displayHeight /800
                 ),
+                destination = null
             )
         )
     }
@@ -124,6 +135,7 @@ class MainButtonsData(private val ctx: Context, private val displayHeight:Float)
     data class ButtonInfo(
         val text:String,
         val icons:Int,
-        val background: Drawable
+        val background: Drawable,
+        val destination: Int?
     )
 }

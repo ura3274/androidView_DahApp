@@ -34,7 +34,7 @@ class RecycleViewAdapter(
         holder.imageBtn.background = icons[position].background
         holder.imageBtn.setImageResource(icons[position].icons)
         holder.imageBtn.setOnClickListener{v ->
-            (act as MainActivity).navController.navigate(R.id.toFinanceFragmentAction)
+            if(icons[position].destination != null) (act as MainActivity).navController.navigate(icons[position].destination!!)
         }
         holder.textView.text = icons[position].text
         holder.textView.textSize = 16f-((2400f - displayHeight)/400f)

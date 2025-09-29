@@ -12,11 +12,19 @@
             android:id="@+id/toFinanceFragmentAction"
             app:destination="@id/financeFragment"
             />
+        <action
+            android:id="@+id/toNeighboursFragmentAction"
+            app:destination="@id/neighboursFragment"
+            />
         </fragment>
 
     <fragment
         android:id="@+id/financeFragment"
         android:name="com.example.myapplication.mainFragments.FinanceFragment"
+        />
+    <fragment
+        android:id="@+id/neighboursFragment"
+        android:name="com.example.myapplication.mainFragments.NeighboursFragment"
         />
 
 </navigation>

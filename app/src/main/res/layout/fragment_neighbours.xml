@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mainFragments.NeighboursFragment">
+    <ImageView
+        android:id="@+id/back_image_neighbour"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/my_photo"
+        android:scaleType="centerCrop"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="W,1:1"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.35"
+            android:background="@drawable/oval_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/circle_image_neighbour"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="myPhoto"
+            app:layout_constraintDimensionRatio="W,1:1"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/my_photo"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linLay_neighbour"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/finance_recycler_bg"
+        android:orientation="horizontal"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
