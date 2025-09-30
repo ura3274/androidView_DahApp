@@ -10,8 +10,10 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapters.FinanceRecyclerAdapter
@@ -44,6 +46,11 @@ class FinanceFragment : Fragment() {
         val frontView = view.findViewById<View>(R.id.frontConstraint_finance)
         val recycler = view.findViewById<RecyclerView>(R.id.recycler_finance)
         val buttonPay = view.findViewById<MaterialButton>(R.id.buttonPay_finance)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            val nav = findNavController()
+            nav.popBackStack()
+        }
 
         recycler.adapter = FinanceRecyclerAdapter(FinanceButtonsData(requireContext(), displayHeight).data)
         buttonPay.backgroundTintList = null

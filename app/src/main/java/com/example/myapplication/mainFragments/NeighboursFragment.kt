@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
 import com.google.android.material.imageview.ShapeableImageView
 
@@ -42,9 +44,16 @@ class NeighboursFragment : Fragment() {
         val circleImage = view.findViewById<ShapeableImageView>(R.id.circle_image_neighbour)
         val linLay = view.findViewById<LinearLayout>(R.id.linLay_neighbour)
         val backImage = view.findViewById<ImageView>(R.id.back_image_neighbour)
+        val circleView = view.findViewById<View>(R.id.circle_view_neighbour)
 
         var xPos = 0f
         var yPos = 0f
+        var circleViewAlpha = 0f
+
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            val nav = findNavController()
+            nav.popBackStack()
+        }
 
         linLay.setOnTouchListener { v, event ->
             when(event.action){
@@ -64,12 +73,25 @@ class NeighboursFragment : Fragment() {
                         backImage.alpha += if(backImage.alpha < 1f)(f-params.matchConstraintPercentHeight)/0.2f else 0f
                         paramsCircleImg.matchConstraintPercentWidth += if(paramsCircleImg.matchConstraintPercentWidth < 0.6f)((f-params.matchConstraintPercentHeight)*0.3f)/0.2f else 0f
                         circleImage.alpha -= if(circleImage.alpha > 0f)(f-params.matchConstraintPercentHeight)/0.2f else 0f
+                        if(paramsCircleImg.matchConstraintPercentWidth >= 0.35f){
+                            circleView.alpha = 0f
+                        }else{
+                            circleView.alpha -= if(circleView.alpha > 0f)(f-params.matchConstraintPercentHeight)/0.2f else 0f
+                            circleViewAlpha = circleView.alpha
+                        }
+
                     }else{
                         val f = params.matchConstraintPercentHeight
                         params.matchConstraintPercentHeight += if(params.matchConstraintPercentHeight < 0.65f)0.005f else 0f
                         backImage.alpha -= if(backImage.alpha > 0f)(params.matchConstraintPercentHeight-f)/0.2f else 0f
                         paramsCircleImg.matchConstraintPercentWidth -= if(paramsCircleImg.matchConstraintPercentWidth > 0.3f)((params.matchConstraintPercentHeight-f)*0.3f)/0.2f else 0f
                         circleImage.alpha += if(circleImage.alpha < 1f)(params.matchConstraintPercentHeight-f)/0.2f else 0f
+                        if(paramsCircleImg.matchConstraintPercentWidth <= 0.35f){
+                            circleView.alpha = circleViewAlpha
+                            circleView.alpha += if(circleView.alpha < 1f)(params.matchConstraintPercentHeight-f)/0.2f else 0f
+                            circleViewAlpha = circleView.alpha
+                        }
+
                     }
 
                     //Log.d("MyLog", "move: x:${params.verticalBias}")
@@ -90,11 +112,13 @@ class NeighboursFragment : Fragment() {
                         backImage.alpha = 0f
                         paramsCircleImg.matchConstraintPercentWidth = 0.3f
                         circleImage.alpha = 1f
+                        circleView.alpha = 1f
                     }else{
                         params.matchConstraintPercentHeight = 0.45f
                         backImage.alpha = 1f
                         paramsCircleImg.matchConstraintPercentWidth = 0.6f
                         circleImage.alpha = 0f
+                        circleView.alpha = 0f
                     }
                     v.layoutParams = params
                     circleImage.layoutParams = paramsCircleImg
